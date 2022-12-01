@@ -74,6 +74,9 @@ def searchGoogle(query):
             'link': product_link,
             'source': source,
             'price': price,
+            'rating': rating,
+            'reviews': reviews,
+            'delivery': delivery,
             'image': image,
         })
 
