@@ -11,7 +11,7 @@ The scraper module holds functions that actually scrape the e-commerce websites
 """
 
 import requests
-import formatter
+import formater
 from bs4 import BeautifulSoup
 
 
@@ -101,7 +101,7 @@ def searchAmazon(query, linkFlag):
     :param query: search keyword to perform the query
     return: returns the products list from amazon
     """
-    query = formatter.formatSearchQuery(query)
+    query = formater.formatSearchQuery(query)
     URL = f'https://www.amazon.com/s?k={query}'
     page = httpsGet(URL)
     results = page.findAll("div", {"data-component-type": "s-search-result"})
@@ -110,7 +110,7 @@ def searchAmazon(query, linkFlag):
         titles, prices, links = res.select("h2 a span"), res.select(
             "span.a-price span"), res.select("h2 a.a-link-normal")
         ratings = res.select("span.a-icon-alt")
-        product = formatter.formatResult("amazon", titles, prices, links,
+        product = formater.formatResult("amazon", titles, prices, links,
                                          ratings)
         if not linkFlag:
             del product["link"]
@@ -125,7 +125,7 @@ def searchWalmart(query, linkFlag):
     :param query: search keyword to perform the query
     return: returns the product list from walmart
     """
-    query = formatter.formatSearchQuery(query)
+    query = formater.formatSearchQuery(query)
     URL = f'https://www.walmart.com/search?q={query}'
     page = httpsGet(URL)
     results = page.findAll("div", {"data-item-id": True})
@@ -138,7 +138,7 @@ def searchWalmart(query, linkFlag):
             ratings = [ratings[2]]
         else:
             ratings = None
-        product = formatter.formatResult("walmart", titles, prices, links,
+        product = formater.formatResult("walmart", titles, prices, links,
                                          ratings)
         if not linkFlag:
             del product["link"]
@@ -153,7 +153,7 @@ def searchTarget(query, linkFlag):
     :param query: search keyword to perform the query
     return: returns the product list from target
     """
-    query = formatter.formatSearchQuery(query)
+    query = formater.formatSearchQuery(query)
     URL = f'https://www.target.com/s?searchTerm={query}'
     page = httpsGetTarget(URL, query)
     results = page['data']['search']['products']
@@ -173,7 +173,7 @@ def searchTarget(query, linkFlag):
                 results[idx]['item']['primary_brand']['canonical_url'])
         else:
             links = ''
-        product = formatter.formatResult("target", titles, prices, links,
+        product = formater.formatResult("target", titles, prices, links,
                                          ratings)
         if not linkFlag:
             del product["link"]

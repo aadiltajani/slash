@@ -9,7 +9,7 @@ this file. If not, please write to: secheaper@gmail.com
 
 import argparse
 import scraper
-import formatter
+import formater
 import email_utils
 from tabulate import tabulate
 
@@ -48,13 +48,13 @@ def main():
     products3 = scraper.searchTarget(args.search, args.link)
     finalistList = []
     finalistList.append(
-        formatter.sortList(products1, args.sort, args.des)[:args.num])
+        formater.sortList(products1, args.sort, args.des)[:args.num])
     finalistList.append(
-        formatter.sortList(products2, args.sort, args.des)[:args.num])
+        formater.sortList(products2, args.sort, args.des)[:args.num])
     finalistList.append(
-        formatter.sortList(products3, args.sort, args.des)[:args.num])
+        formater.sortList(products3, args.sort, args.des)[:args.num])
     mergedResults = email_utils.alternateMerge(finalistList)
-    results = formatter.sortList(mergedResults, args.sort, args.des)
+    results = formater.sortList(mergedResults, args.sort, args.des)
 
     print()
     print()
