@@ -84,7 +84,7 @@ def searchGoogle(query):
 
     # print(shopping_data_dict)
 
-    print("Done!")
+    # print("Done!")
     return shopping_data_dict
 
 

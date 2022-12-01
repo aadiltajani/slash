@@ -12,6 +12,7 @@ import scraper
 import formater
 import email_utils
 from tabulate import tabulate
+import google_scrapper
 
 
 def main():
@@ -43,18 +44,19 @@ def main():
                         help="list of email to get notified")
     args = parser.parse_args()
 
-    products1 = scraper.searchAmazon(args.search, args.link)
-    products2 = scraper.searchWalmart(args.search, args.link)
-    products3 = scraper.searchTarget(args.search, args.link)
-    finalistList = []
-    finalistList.append(
-        formater.sortList(products1, args.sort, args.des)[:args.num])
-    finalistList.append(
-        formater.sortList(products2, args.sort, args.des)[:args.num])
-    finalistList.append(
-        formater.sortList(products3, args.sort, args.des)[:args.num])
-    mergedResults = email_utils.alternateMerge(finalistList)
-    results = formater.sortList(mergedResults, args.sort, args.des)
+    # products1 = scraper.searchAmazon(args.search, args.link)
+    # products2 = scraper.searchWalmart(args.search, args.link)
+    # products3 = scraper.searchTarget(args.search, args.link)
+    # finalistList = []
+    # finalistList.append(
+    #     formater.sortList(products1, args.sort, args.des)[:args.num])
+    # finalistList.append(
+    #     formater.sortList(products2, args.sort, args.des)[:args.num])
+    # finalistList.append(
+    #     formater.sortList(products3, args.sort, args.des)[:args.num])
+    # mergedResults = email_utils.alternateMerge(finalistList)
+    # results = formater.sortList(mergedResults, args.sort, args.des)
+    results = google_scrapper.searchGoogle(args.search)
 
     print()
     print()
