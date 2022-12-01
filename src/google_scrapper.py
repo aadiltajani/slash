@@ -49,6 +49,21 @@ def searchGoogle(query):
         price = shopping_result.select_one('span.kHxwFf span').text
         image = shopping_result.findAll('img')[0].attrs['src']
 
+        try:
+            rating = shopping_result.select_one('.Rsc7Yb').text
+        except:
+            rating = None
+
+        try:
+            reviews = shopping_result.select_one('.Rsc7Yb').next_sibling.next_sibling
+        except:
+            reviews = None
+
+        try:
+            delivery = shopping_result.select_one('.vEjMR').text
+        except:
+            delivery = None
+
         shopping_results.append({
             'title': title,
             'link': product_link,
