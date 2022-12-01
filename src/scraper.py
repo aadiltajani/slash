@@ -111,7 +111,7 @@ def searchAmazon(query, linkFlag):
             "span.a-price span"), res.select("h2 a.a-link-normal")
         ratings = res.select("span.a-icon-alt")
         product = formater.formatResult("amazon", titles, prices, links,
-                                         ratings)
+                                        ratings)
         if not linkFlag:
             del product["link"]
         if prices is not None:
@@ -139,7 +139,7 @@ def searchWalmart(query, linkFlag):
         else:
             ratings = None
         product = formater.formatResult("walmart", titles, prices, links,
-                                         ratings)
+                                        ratings)
         if not linkFlag:
             del product["link"]
         if prices is not None:
@@ -174,7 +174,7 @@ def searchTarget(query, linkFlag):
         else:
             links = ''
         product = formater.formatResult("target", titles, prices, links,
-                                         ratings)
+                                        ratings)
         if not linkFlag:
             del product["link"]
         if prices is not None:
