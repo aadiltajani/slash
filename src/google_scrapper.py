@@ -3,17 +3,18 @@ from bs4 import BeautifulSoup
 # from outputs import output_json
 import re
 
+
 def searchGoogle(query):
-        
-    
+
     params = {"q": query, "hl": "en", 'gl': 'us', 'tbm': 'shop'}
     freeDelivery = False
     url = 'https://www.google.com/search'
 
     # REQUEST
-    response = requests.get(url,
-                            params=params,
-                            )
+    response = requests.get(
+        url,
+        params=params,
+    )
 
     soup = BeautifulSoup(response.text, 'lxml')
 
@@ -23,13 +24,14 @@ def searchGoogle(query):
     shopping_results = []
 
     for inline_result in soup.select('.sh-np__click-target'):
-        inline_shopping_title = inline_result.select_one('.sh-np__product-title').text
+        inline_shopping_title = inline_result.select_one(
+            '.sh-np__product-title').text
         inline_shopping_link = f"https://www.google.com{inline_result['href']}"
         inline_shopping_price = inline_result.select_one('b').text
-        inline_shopping_source = inline_result.select_one('.E5ocAb').text.strip()
+        inline_shopping_source = inline_result.select_one(
+            '.E5ocAb').text.strip()
         inline_shopping_image = inline_result.findAll('img')[0].attrs['src']
-        
-        
+
         inline_results.append({
             'title': inline_shopping_title,
             'link': inline_shopping_link,
@@ -47,16 +49,11 @@ def searchGoogle(query):
         price = shopping_result.select_one('span.kHxwFf span').text
         image = shopping_result.findAll('img')[0].attrs['src']
 
-
-        
-
-
         shopping_results.append({
             'title': title,
             'link': product_link,
             'source': source,
             'price': price,
-            
             'image': image,
         })
 
