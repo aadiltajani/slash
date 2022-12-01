@@ -5,16 +5,21 @@ import re
 
 
 def searchGoogle(query):
-
+        
+    # CONFIGURATION
+    headers = {
+        "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
+    }
+    # query = "lenovo thinkpad"
     params = {"q": query, "hl": "en", 'gl': 'us', 'tbm': 'shop'}
     freeDelivery = False
     url = 'https://www.google.com/search'
 
     # REQUEST
-    response = requests.get(
-        url,
-        params=params,
-    )
+    response = requests.get(url,
+                            params=params,
+                            headers=headers)
 
     soup = BeautifulSoup(response.text, 'lxml')
 
