@@ -88,8 +88,8 @@ def searchGoogle(query):
     return shopping_data_dict
 
 
-query = input("Enter the product you want to search for: ")
-
-products = searchGoogle(query)
-
-print(products)
+# query = input("Enter the product you want to search for: ")
+#
+# products = searchGoogle(query)
+#
+# print(products)
