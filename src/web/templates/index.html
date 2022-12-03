@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+<head>
+
+    <title>SLASH</title>
+
+
+
+</head>
+
+<body>
+    <h1> SLASH </h1>
+    <div style="display: flex;">
+        <form action="{{ url_for('get_products')}}" method=POST enctype="multipart/form-data">
+            <input type="text" name="product" id="product_input" required="required" />
+            <button type="submit">Check</button>
+        </form>
+    </div>
+    <p> Here is the List of products you requested for : </p>
+    <div class="products-list">
+        <!-- <ul> -->
+        {{res1}}
+
+        {{res2}}
+
+
+
+
+    </div>
 </body>
+<script>
+</script>
+
 </html>
