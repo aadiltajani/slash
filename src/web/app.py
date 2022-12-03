@@ -1,7 +1,9 @@
 import sys
 sys.path.append('../')
 from flask import Flask, render_template, request
-
+from scraper import searchAmazon
+from scraper import searchTarget
+from scraper import searchWalmart
 from google_scrapper import searchGoogle
 
 app = Flask(__name__)
