@@ -23,7 +23,6 @@
         <!-- <ul> -->
 
             {% for item in res1 %}
-            <!-- <li> -->
 
                 <div class="card ">
                     <div >
@@ -33,7 +32,8 @@
                     <hr>
                     <div class="card-content">
                         <b>{{item.price}} </b> on
-                        {{item.source}}
+                        {{item.source}}<br>
+                        {{item.price_description}}
                     </div>
                     <div class="card-action">
                         <a href="{{item.link}}" target="_blank">Buy Now</a>
@@ -42,66 +42,36 @@
                   </div>
 
 
-                <!-- <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title"> {{item.title}} </span>
-                        {{item.price}}
-                        {{item.source}}
-                        {{item.image}}
-                    </div>
-                    <div class="card-action">
-                        <a href="{{item.link}}" target="_blank">Buy Now</a>
-
-                    </div>
-
-                </div> -->
-            <!-- </li> -->
-                
+               
                 
             {% endfor %}
 
 
-            <!-- {% for item in res2 %} -->
-            <!-- <li> -->
-                <!-- <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
-                        <span class="card-title"> {{item.title}} </span>
-                        {{item.price}}
-                        {{item.source}}
-                    </div>
-                    <div class="card-action">
-                        <a href="{{item.link}}" target="_blank">Buy Now</a>
-                        <span> </span>
-                    </div>
+            {% for itemnew in res2 %}
 
-                </div> -->
-
-                <!-- <div class="card">
+                <div class="card ">
                     <div >
-                        <img  class="img-block" src="{{item.image}}">
-                      </div>
-                      
-                    <p class="card-title">{{item.title}}</p>
+                      <img  class="img-block" src="{{itemnew.image}}">
+                    </div>
+                    <p class="card-title">{{itemnew.title}}</p>
                     <hr>
                     <div class="card-content">
-                        <b>{{item.price}}</b> on
-                        {{item.source}}
-                    </div>
-                    <div class="card-content"> Rating:
-                        {{item.rating}}
-                    </div>
-                    <div class="card-content"> Delivery:
-                        {{item.delivery}}
+                        <b>{{itemnew.price}} </b> on
+                        {{itemnew.source}}<br>
+                        {{itemnew.price_description}}
                     </div>
                     <div class="card-action">
-                        <a href="{{item.link}}" target="_blank" class="buy-btn">Buy Now</a>
+                        <a href="{{itemnew.link}}" target="_blank">Buy Now</a>
 
                     </div>
-                  </div> -->
-            <!-- </li> -->
+                  </div>
+
+
                 
                 
-            <!-- {% endfor %} -->
+                
+            {% endfor %}
+
         <!-- </ul> -->
         
         <!-- {{ res1 }}

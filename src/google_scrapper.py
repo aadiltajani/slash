@@ -35,6 +35,15 @@ def searchGoogle(query):
         inline_shopping_source = inline_result.select_one(
             '.E5ocAb').text.strip()
         inline_shopping_image = inline_result.findAll('img')[0].attrs['src']
+        try:
+            price_description = inline_result.select_one(
+            '.SHsMUd').text
+            if(price_description == None or price_description ==''):
+                price_description = inline_result.select_one('.LGq5Zc').text
+            if(price_description == None or price_description ==''):
+                price_description = r.select_one('.T4OwTb').text
+        except:
+            price_description = ''
 
         inline_results.append({
             'title': inline_shopping_title,
@@ -42,6 +51,7 @@ def searchGoogle(query):
             'price': inline_shopping_price,
             'source': inline_shopping_source,
             'image': inline_shopping_image,
+            'price_description': price_description
         })
 
     shopping_data_dict.update({"inline_shopping_results": inline_results})
@@ -81,6 +91,16 @@ def searchGoogle(query):
             rating = None
 
         try:
+            price_description = inline_result.select_one(
+            '.SHsMUd').text
+            if(price_description == None or price_description ==''):
+                price_description = inline_result.select_one('.LGq5Zc').text
+            if(price_description == None or price_description ==''):
+                price_description = r.select_one('.T4OwTb').text
+        except:
+            price_description = ''
+
+        try:
             reviews = r.select_one('.Rsc7Yb').next_sibling.next_sibling
         except:
             reviews = None
@@ -99,6 +119,8 @@ def searchGoogle(query):
             'reviews': reviews,
             'delivery': delivery,
             'image': image,
+            'price_description': price_description
+
         })
 
     shopping_data_dict.update({"shopping_results": shopping_results})
