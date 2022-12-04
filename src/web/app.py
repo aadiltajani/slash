@@ -20,19 +20,13 @@ def home():
 def get_products():
     val = request.form['product']
     number = request.form.get('number')
-    print(type(number))
-    if number == '':
-        number = 0
-    else:
-        number = int(number)
+
     if request.form.get('sort'):
         sortval = True
     else:
         sortval = False
-    print('Searching for', val, '  Sort:', sortval, number, 'results')
     products1 = searchGoogle(val, sortval, number)
-    for i in products1['inline_shopping_results']:
-        print(i)
+
     return render_template('index.html', res1=products1['inline_shopping_results'])
 
 

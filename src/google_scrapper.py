@@ -7,6 +7,14 @@ from bs4 import BeautifulSoup
 
 
 def searchGoogle(query, sortval, number):
+
+    if number == '':
+        number = 0
+    else:
+        number = int(number)
+
+    print('Searching for', query, '  Sort:', sortval, ',  showing {} results'.format(number if number !=0 else 'all'))
+
     # CONFIGURATION
     headers = {
         "User-Agent":
@@ -48,12 +56,12 @@ def searchGoogle(query, sortval, number):
 
         inline_results.append({
             'title': inline_shopping_title,
-            'link': inline_shopping_link,
+            'source': inline_shopping_source,
             'price': inline_shopping_price,
             'rating': inline_shopping_rating,
+            'link': inline_shopping_link,
             'delivery': None,
             'price_description': price_description,
-            'source': inline_shopping_source,
             'image': inline_shopping_image,
         })
 
@@ -78,10 +86,10 @@ def searchGoogle(query, sortval, number):
 
         shopping_results.append({
             'title': title,
-            'link': product_link,
             'source': source,
             'price': price,
             'rating': rating,
+            'link': product_link,
             'delivery': delivery,
             'image': image,
             'price_description': price_description
@@ -94,5 +102,7 @@ def searchGoogle(query, sortval, number):
     if 0 < number < len(results):
         results = results[:number]
     shopping_data_dict.update({"inline_shopping_results": results})
+    for i in shopping_data_dict['inline_shopping_results']:
+        print(i)
 
     return shopping_data_dict
