@@ -19,7 +19,7 @@ def get_products():
 
     products1 = searchGoogle(val)
 
-    return render_template('index.html', res1=products1['inline_shopping_results'], res2 = products1['shopping_results'])
+    return render_template('index.html', res1=products1['inline_shopping_results'])
 
 
 if __name__ == "__main__":
