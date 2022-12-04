@@ -43,12 +43,20 @@ def searchGoogle(query):
             inline_shopping_rating = inline_result.select_one('.qSSQfd').text
         except:
             inline_shopping_rating = None
+        try:
+            price_description = inline_result.select_one(
+                '.SHsMUd').text
+
+        except:
+            price_description = ''
+
         inline_results.append({
             'title': inline_shopping_title,
             'link': inline_shopping_link,
             'price': inline_shopping_price,
             'rating': inline_shopping_rating,
             'delivery': None,
+            'price_description': price_description,
             'source': inline_shopping_source,
             'image': inline_shopping_image,
         })
@@ -83,16 +91,17 @@ def searchGoogle(query):
         source = r.select_one('.IuHnof').text
         price = r.select_one('.OFFNJ').text
         image = r.find('img')
-
-        try:
-            rating = r.select_one('.QIrs8').text
-        except:
-            rating = None
-
+        rating = r.select_one('.QIrs8').text
+        print(r.select_one('.vEjMR').text)
         try:
             delivery = r.select_one('.vEjMR').text
         except:
             delivery = None
+
+        try:
+            price_description = r.select_one('.LGq5Zc').text
+        except:
+            price_description = ''
 
         shopping_results.append({
             'title': title,
@@ -102,6 +111,7 @@ def searchGoogle(query):
             'rating': rating,
             'delivery': delivery,
             'image': image,
+            'price_description': price_description
         })
 
     shopping_data_dict.update({"inline_shopping_results": inline_results + shopping_results})
