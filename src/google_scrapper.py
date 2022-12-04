@@ -39,16 +39,21 @@ def searchGoogle(query):
         inline_shopping_source = inline_result.select_one(
             '.E5ocAb').text.strip()
         inline_shopping_image = inline_result.findAll('img')[0].attrs['src']
-
+        try:
+            inline_shopping_rating = inline_result.select_one('.qSSQfd').text
+        except:
+            inline_shopping_rating = None
         inline_results.append({
             'title': inline_shopping_title,
             'link': inline_shopping_link,
             'price': inline_shopping_price,
+            'rating': inline_shopping_rating,
+            'delivery': None,
             'source': inline_shopping_source,
             'image': inline_shopping_image,
         })
 
-    shopping_data_dict.update({"inline_shopping_results": inline_results})
+    # shopping_data_dict.update({"inline_shopping_results": inline_results})
 
     # for shopping_result in soup.select('.sh-dgr__content'):
     #     title = shopping_result.select_one('.Lq5OHe.eaGTj h4').text
@@ -85,11 +90,6 @@ def searchGoogle(query):
             rating = None
 
         try:
-            reviews = r.select_one('.Rsc7Yb').next_sibling.next_sibling
-        except:
-            reviews = None
-
-        try:
             delivery = r.select_one('.vEjMR').text
         except:
             delivery = None
@@ -100,21 +100,10 @@ def searchGoogle(query):
             'source': source,
             'price': price,
             'rating': rating,
-            'reviews': reviews,
             'delivery': delivery,
             'image': image,
         })
 
-    shopping_data_dict.update({"shopping_results": shopping_results})
+    shopping_data_dict.update({"inline_shopping_results": inline_results + shopping_results})
 
-    # print(shopping_data_dict)
-
-    # print("Done!")
     return shopping_data_dict
-
-
-# query = input("Enter the product you want to search for: ")
-#
-# products = searchGoogle(query)
-#
-# print(products)
