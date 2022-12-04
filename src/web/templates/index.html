@@ -14,8 +14,10 @@
     <h1> SLASH </h1>
     <div style="display: flex;">
         <form action="{{ url_for('get_products')}}" method=POST enctype="multipart/form-data">
-            <input type="text" name="product" id="product_input" required="required" />
+            Product:<input type="text" name="product" id="product_input" required="required" />
+            Email ID:<input type="text" name="email" id="email_input" required="required" />
             <button type="submit">Check</button>
+
         </form>
     </div>
     <p> Here is the List of products you requested for : </p>

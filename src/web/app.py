@@ -1,3 +1,8 @@
+# __author__      =
+# "Aadil Tajani, Dhruvish Patel,
+# Kaustubh Deshpande, Aastha Singh, Arpit Chaudhary"
+# __copyright__      = "Open source libraries"
+
 import sys
 sys.path.append('../')
 from flask import Flask, render_template, request
@@ -13,9 +18,10 @@ def home():
 
 @app.route('/get_products', methods=['POST'])
 def get_products():
-    input = request.form.values()
-    val = list(input)[0]
-    print('Searching for', val)
+    val = request.form['product']
+    print(val)
+    email = request.form['email']
+    print('Searching for', val, '  Email found:', email)
 
     products1 = searchGoogle(val)
 
