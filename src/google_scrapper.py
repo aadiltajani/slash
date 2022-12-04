@@ -4,20 +4,15 @@
 # __copyright__      = "Open source libraries"
 import requests, json
 from bs4 import BeautifulSoup
-# from outputs import output_json
-import re
 
 
-def searchGoogle(query):
-        
+def searchGoogle(query, sortval, number):
     # CONFIGURATION
     headers = {
         "User-Agent":
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
     }
-    # query = "lenovo thinkpad"
-    # params = {"q": query, "hl": "en", 'gl': 'us', 'tbm': 'shop'}
-    freeDelivery = False
+
     url = r'https://www.google.com/search?hl=en&tbm=shop&q={}&&sclient=products-cc'.format('+'.join(query.split(' ')))
     # REQUEST
     response = requests.get(url,
@@ -30,7 +25,7 @@ def searchGoogle(query):
     shopping_data_dict = {}
     inline_results = []
     shopping_results = []
-
+    sellers = set()
     for inline_result in soup.select('.sh-np__click-target'):
         inline_shopping_title = inline_result.select_one(
             '.sh-np__product-title').text
@@ -38,6 +33,7 @@ def searchGoogle(query):
         inline_shopping_price = inline_result.select_one('b').text
         inline_shopping_source = inline_result.select_one(
             '.E5ocAb').text.strip()
+        sellers.add(inline_shopping_source)
         inline_shopping_image = inline_result.findAll('img')[0].attrs['src']
         try:
             inline_shopping_rating = inline_result.select_one('.qSSQfd').text
@@ -61,38 +57,15 @@ def searchGoogle(query):
             'image': inline_shopping_image,
         })
 
-    # shopping_data_dict.update({"inline_shopping_results": inline_results})
-
-    # for shopping_result in soup.select('.sh-dgr__content'):
-    #     title = shopping_result.select_one('.Lq5OHe.eaGTj h4').text
-    #     product_link = f"https://www.google.com{shopping_result.select_one('.Lq5OHe.eaGTj')['href']}"
-    #     source = shopping_result.select_one('.IuHnof').text
-    #     price = shopping_result.select_one('span.kHxwFf span').text
-    #     image = shopping_result.findAll('img')[0].attrs['src']
-    #
-    #     try:
-    #         rating = shopping_result.select_one('.Rsc7Yb').text
-    #     except:
-    #         rating = None
-    #
-    #     try:
-    #         reviews = shopping_result.select_one('.Rsc7Yb').next_sibling.next_sibling
-    #     except:
-    #         reviews = None
-    #
-    #     try:
-    #         delivery = shopping_result.select_one('.vEjMR').text
-    #     except:
-    #         delivery = None
     res = soup.find_all('div', class_='sh-dgr__content')
     for r in res:
         title = r.select_one('.tAxDx').text
         product_link = f"https://www.google.com{r.select_one('.Lq5OHe.eaGTj')['href']}"
         source = r.select_one('.IuHnof').text
+        sellers.add(source)
         price = r.select_one('.OFFNJ').text
         image = r.find('img')
         rating = r.select_one('.QIrs8').text
-        print(r.select_one('.vEjMR').text)
         try:
             delivery = r.select_one('.vEjMR').text
         except:
@@ -114,6 +87,12 @@ def searchGoogle(query):
             'price_description': price_description
         })
 
-    shopping_data_dict.update({"inline_shopping_results": inline_results + shopping_results})
+    print('No of sellers:', len(sellers), '  Sellers:', sellers)
+    results = inline_results + shopping_results
+    if sortval:
+        results.sort(key=lambda x: float(''.join(x['price'][1:].split()[0].split(','))))
+    if 0 < number < len(results):
+        results = results[:number]
+    shopping_data_dict.update({"inline_shopping_results": results})
 
     return shopping_data_dict

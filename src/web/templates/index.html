@@ -15,7 +15,8 @@
     <div style="display: flex;">
         <form action="{{ url_for('get_products')}}" method=POST enctype="multipart/form-data">
             Product:<input type="text" name="product" id="product_input" required="required" />
-            Email ID:<input type="text" name="email" id="email_input" required="required" />
+            Sorted:<input type="checkbox" name="sort" value="sorted">
+            #Results:<input type="number" name="number">
             <button type="submit">Check</button>
 
         </form>
@@ -53,37 +54,6 @@
                
                 
             {% endfor %}
-
-
-            {% for itemnew in res2 %}
-
-<!--                <div class="card ">-->
-<!--                    <div >-->
-<!--                      <img  class="img-block" src="{{itemnew.image}}">-->
-<!--                    </div>-->
-<!--                    <p class="card-title">{{itemnew.title}}</p>-->
-<!--                    <hr>-->
-<!--                    <div class="card-content">-->
-<!--                        <b>{{itemnew.price}} </b> on-->
-<!--                        {{itemnew.source}}<br>-->
-<!--                        {{itemnew.price_description}}-->
-<!--                    </div>-->
-<!--                    <div class="card-action">-->
-<!--                        <a href="{{itemnew.link}}" target="_blank">Buy Now</a>-->
-
-<!--                    </div>-->
-<!--                  </div>-->
-
-
-                
-                
-                
-            {% endfor %}
-
-        <!-- </ul> -->
-        
-        <!-- {{ res1 }}
-        {{ res2 }} -->
 
     </div>
 </body>
