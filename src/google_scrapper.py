@@ -6,12 +6,10 @@ import requests, json
 from bs4 import BeautifulSoup
 
 
-def searchGoogle(query, sortval, number):
+def searchGoogle(query, sortval, number=0):
 
-    if number == '':
-        number = 0
-    else:
-        number = int(number)
+
+    number = int(number)
 
     print('Searching for', query, '  Sort:', sortval, ',  showing {} results'.format(number if number !=0 else 'all'))
 
