@@ -2,14 +2,13 @@
 
 **Shopping Made Easy**
 
-![GitHub](https://img.shields.io/github/license/vishnuchalla/slash)
-![github workflow](https://github.com/secheaper/cheaper/actions/workflows/python-app.yml/badge.svg) 
+[![GitHub](https://img.shields.io/github/license/aadiltajani/slash)](https://github.com/aadiltajani/slash/blob/main/LICENSE)
+[![github workflow](https://github.com/secheaper/cheaper/actions/workflows/python-app.yml/badge.svg)](https://github.com/aadiltajani/slash/actions)
 [![DOI](https://zenodo.org/badge/561915312.svg)](https://zenodo.org/badge/latestdoi/561915312)
 ![Github](https://img.shields.io/badge/language-python-red.svg)
-![GitHub issues](https://img.shields.io/github/issues-raw/vishnuchalla/slash)
-![Github closes issues](https://img.shields.io/github/issues-closed-raw/vishnuchalla/slash)
-![Github pull requests](https://img.shields.io/github/issues-pr/vishnuchalla/slash)
-![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/vishnuchalla/slash)
+[![GitHub issues](https://img.shields.io/github/issues-raw/aadiltajani/slash)](https://github.com/aadiltajani/slash/issues?q=is%3Aopen+is%3Aissue)
+[![Github closes issues](https://img.shields.io/github/issues-closed-raw/aadiltajani/slash)](https://github.com/aadiltajani/slash/issues?q=is%3Aissue+is%3Aclosed)
+[![Github pull requests](https://img.shields.io/github/issues-pr/aadiltajani/slash)](https://github.com/aadiltajani/slash/pulls)
 [![codecov](https://codecov.io/github/aadiltajani/slash/branch/main/graph/badge.svg?token=QPPBLKWU80)](https://codecov.io/github/aadiltajani/slash)
 
 Slash is a command line tool that scrapes the most popular e-commerce websites to get the best deals on the searched items across these websites. 
