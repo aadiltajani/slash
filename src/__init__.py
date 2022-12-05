@@ -4,11 +4,14 @@
 aadiltajani/slash))
 You can go through the following modules:
 1) google_scrapper:
-https://aadiltajani.github.io/
-slash/google_scrapper.html
+https://aadiltajani.github.io/slash/src/
+google_scrapper.html
+
+2) main(running example):
+https://aadiltajani.github.io/slash/src/main.html
 
 Working example:
-[link](https://github.com/aadiltajani/
-slash/actions/runs/3216582722)
+[link](https://github.com/aadiltajani/slash
+/actions/runs/3623057414/jobs/6108483409)
 .. include:: ../README.md
 """
