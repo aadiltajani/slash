@@ -37,7 +37,7 @@ jobs:
           pip install -r requirements.txt
           
       - name: Run main.py
-        run: python ./AnalysisCode/main.py
+        run: python ./src/main.py
       - name: Run test cases using pytest
         run: python -m pytest
       - name: Run custom test cases
