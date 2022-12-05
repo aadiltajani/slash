@@ -1,8 +1,10 @@
 """
 # This is the Auto Generated Document for our project 2 Slash
-([GitHub Repository](https://github.com/
-aadiltajani/slash))
+[GitHub Repository](https://github.com/
+aadiltajani/slash)
+
 You can go through the following modules:
+
 1) google_scrapper:
 https://aadiltajani.github.io/slash/src/
 google_scrapper.html
