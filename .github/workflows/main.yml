@@ -52,3 +52,5 @@ jobs:
           coverage run ./src/main.py
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          token: 125c2e28-3277-421b-82eb-d363cdc47b2a
