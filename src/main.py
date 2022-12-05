@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./src')
 from google_scrapper import searchGoogle
 
 # searching without sorting, retrieving 10 items
