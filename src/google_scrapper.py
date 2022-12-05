@@ -20,8 +20,8 @@ def searchGoogle(query, sortval, number=0):
             "537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
     }
 
-    url = (r'https://www.google.com/search\
-           ?hl=en&tbm=shop&q={}&&sclient=products-cc'
+    url = (r'https://www.google.com'
+           r'/search?hl=en&tbm=shop&q={}&&sclient=products-cc'
            .format('+'.join(query.split(' '))))
     # REQUEST
     response = requests.get(url,
