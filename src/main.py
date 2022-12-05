@@ -1,7 +1,7 @@
 import sys
 sys.path.append('./src')
 
-from google_scrapper import searchGoogle # noqa: E402
+from google_scrapper import searchGoogle  # noqa: E402
 
 # searching without sorting, retrieving 10 items
 searchGoogle('iphone 14', False, 10)
