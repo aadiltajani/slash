@@ -1,13 +1,16 @@
-import google_scrapper
+import sys
+sys.path.append('./src')
+
+from google_scrapper import searchGoogle # noqa: E402
 
 # searching without sorting, retrieving 10 items
-google_scrapper.searchGoogle('iphone 14', False, 10)
+searchGoogle('iphone 14', False, 10)
 
 # searching with sorting, retrieving 10 items
-google_scrapper.searchGoogle('cake', True, 20)
+searchGoogle('cake', True, 20)
 
 # searching without sorting, retrieving all items
-google_scrapper.searchGoogle('charger', False)
+searchGoogle('charger', False)
 
 # searching with sorting, retrieving all items
-google_scrapper.searchGoogle('milk', True)
+searchGoogle('milk', True)
