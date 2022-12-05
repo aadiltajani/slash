@@ -3,10 +3,10 @@
 # Kaustubh Deshpande, Aastha Singh, Arpit Chaudhary"
 # __copyright__      = "Open source libraries"
 
-from flask import Flask, render_template, request
-from google_scrapper import searchGoogle
 import sys
 sys.path.append('../')
+from flask import Flask, render_template, request  # noqa: E402
+from google_scrapper import searchGoogle  # noqa: E402
 
 app = Flask(__name__)
 
