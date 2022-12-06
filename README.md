@@ -40,9 +40,19 @@ Document Generated: https://aadiltajani.github.io/slash/
   
 </ul>
 
+# Original Implementation:
+
 ---
 
 <p align="center"><img width="700" src="./assets/DemoGif.gif"></p>
+
+---
+
+# Our Modification:
+
+---
+
+<p align="center"><img width="700" src="./assets/demo.mp4"></p>
 
 ---
 
