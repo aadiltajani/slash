@@ -270,6 +270,8 @@ We can also redirect to the stores from where they can buy the products.
 
 A few snapshots of our UI:
 
+<p align="center"><img width="500" src="./assets/Chocolates.jpeg"></p>
+<p align="center"><img width="500" src="./assets/Philips.jpeg"></p>
 
 
 :thought_balloon: Use Case
