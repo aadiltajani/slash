@@ -60,36 +60,17 @@ Document Generated: https://aadiltajani.github.io/slash/
 ---
 1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then ```cd``` into the local repository.
 ```
-git clone https://github.com/vishnuchalla/slash
+git clone https://github.com/aadiltajani/slash
 cd slash
 ```
 2. This project uses Python 3, so make sure that [Python](https://www.python.org/downloads/) and [Pip](https://pip.pypa.io/en/stable/installation/) are preinstalled. All requirements of the project are listed in the ```requirements.txt``` file. Use pip to install all of those.
 ```
 pip3 install -r requirements.txt
 ```
-3. Once all the requirements are installed, you will have to ```cd``` into the ```src``` folder. Once in the ```src``` folder, use the python command to run the ```slash.py``` file.
+3. Once all the requirements are installed, you will have to ```cd``` into the ```src``` folder. Once in the ```src``` folder, ```cd``` into the ```web``` folder use the python command to run the ```app.py``` file. It will start the website on your localhost at port 5000 and you can start searching.
 ```
-cd src
 
-For Mac
-python3 slash.py --search icecream
 
-For Windows
-python slash.py --search icecream
-```
-:golf: Flags and Command Line Arguments
----
-Currently, the tool supports the following flags and command line arguments. These flags and arguments can be used to quickly filter and guide the search to get you the best results very quickly.
-
-| Arguments | Type | Default | Description                                                          |
-|-----------|------|---------|----------------------------------------------------------------------|
-| --search  | str  | None    | The product name to be used as the search query                      |
-| --num     | int  | 3       | Maximum number of products to search                                 |
-| --sort    | str  | re      | Sort results by relevance (re), by price (pr), by rating (ra) or by all the features using "all" this sorts in the order of price and ratings in the respective order|
-| --des     | bool | True      | Set boolean flag if results should be sorted in non-increasing order, the default value is true |
-| --email   | str  | "" (empty string) | list of comma separated emails to send notifications |
-
-:card_index_dividers: Some Examples
 ---
 # Original Workflow:
 
@@ -141,31 +122,8 @@ python slash.py --search "philips hue" --sort pr
 | 01/10/2022 13:58:01 EDT -0400 | Philips Hue Smart Stand Alone Bridge, Hu... | $49.68     | walmart   | N.A      |
 | 01/10/2022 13:58:01 EDT -0400 | Philips Hue 2pk BR30 Warm-To-Cool LED Sm... | $49.99     | target    | 4.73     |
 ```
-#### 3. Sort Order
-The ```--des``` flag can be set to sort the requested products in a non-increasing order. This flag will be 
-actually used when coupled with ```--sort``` and the default value taken is true. Example:
-```
-For Mac
-python3 slash.py --search "philips hue" --sort pr --des
 
-For Windows
-python slash.py --search "philips hue" --sort pr --des
-```
-```
-| timestamp                     | title                                       | price   | website   | rating   |
-|-------------------------------|---------------------------------------------|---------|-----------|----------|
-| 01/10/2022 13:59:09 EDT -0400 | 75" Gradient TV Lightstrip Entertainment... | $541.77 | amazon    | 4.3      |
-| 01/10/2022 13:59:09 EDT -0400 | Philips Hue 2-Pack Bluetooth Gradient Am... | $324.99 | amazon    | N.A      |
-| 01/10/2022 13:59:09 EDT -0400 | Philips Hue White and Color Ambiance Ext... | $323.95 | amazon    | N.A      |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue White and Color Ambiance A19... | $199.99 | walmart   | N.A      |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue 4pk White and Color Ambiance... | $199.99 | target    | 4.63     |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue White &#38; Color Ambiance D... | $179.99 | target    | 3.7      |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue 4-Pack White and Color A19 M... | $159.99 | walmart   | N.A      |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue White & Color Ambiance Calla... | $149.99 | target    | 5.0      |
-| 01/10/2022 13:59:11 EDT -0400 | Philips Hue White A19 Smart Light Starte... | $81.86  | walmart   | N.A      |
-```
-
-#### 4. Result length
+#### 3. Result length
 The maximum number of results that are scraped from each website can be set using the ```--num``` argument. It accepts
 an integer value ```n``` and then returns ```n``` results from each website. Note that tool returns a maximum of 
 the value of ```n``` and the number of results on the webiste. By default this value is set to 3. Example:
@@ -227,43 +185,14 @@ No email to send data. Hence not sending the email
 Done :)
 ```
 
-#### 6. Email Notification
-There is an option to send emails to customers using a parameter that accepts a comma separated list of emails. Example:
-```
-For Mac
-python3 slash.py --search "philips hue" --link --email "vchalla2@ncsu.edu,sponnur@ncsu.edu"
 
-For Windows
-python slash.py --search "philips hue" --link --email "vchalla2@ncsu.edu,sponnur@ncsu.edu"
-```
-```
-| timestamp                     | title                                       | price   | website   |   rating | link                         |
-|-------------------------------|---------------------------------------------|---------|-----------|----------|------------------------------|
-| 07/10/2022 16:47:58 EDT -0400 | mens Performance Cotton Cushioned Athlet... | $13.50  | amazon    |     4.5  | https://tinyurl.com/2outdp6f |
-| 07/10/2022 16:48:15 EDT -0400 | Pair of Thieves Men&#39;s Cushion Crew S... | $3.59   | target    |     4.79 | https://tinyurl.com/2o5fx6az |
-| 07/10/2022 16:47:58 EDT -0400 | mens Performance Cotton Cushioned Athlet... | $13.50  | amazon    |     4.5  | https://tinyurl.com/2outdp6f |
-| 07/10/2022 16:48:15 EDT -0400 | Pair of Thieves Men&#39;s Cushion Crew S... | $3.59   | target    |     4.79 | https://tinyurl.com/2o5fx6az |
-| 07/10/2022 16:47:58 EDT -0400 | Mens Socks, 6 Pairs Anti-Blister Cushion... | $15.99  | amazon    |     4.6  | https://tinyurl.com/2dsl5uyc |
-| 07/10/2022 16:48:15 EDT -0400 | Pair of Thieves Men&#39;s Cushion Crew S... | $8.99   | target    |     4.65 | https://tinyurl.com/2o5fx6az |
-| 07/10/2022 16:47:58 EDT -0400 | Mens Socks, 6 Pairs Anti-Blister Cushion... | $15.99  | amazon    |     4.6  | https://tinyurl.com/2dsl5uyc |
-| 07/10/2022 16:48:15 EDT -0400 | Pair of Thieves Men&#39;s Cushion Crew S... | $8.99   | target    |     4.65 | https://tinyurl.com/2o5fx6az |
-| 07/10/2022 16:47:59 EDT -0400 | CelerSport Ankle Athletic Running Socks ... | $15.95  | amazon    |     4.7  | https://tinyurl.com/2en2jbsd |
-| 07/10/2022 16:48:15 EDT -0400 | Signature Gold by GOLDTOE Men&#39;s Mode... | $9.35   | target    |     4.67 | https://tinyurl.com/2m5ec5nt |
-| 07/10/2022 16:47:59 EDT -0400 | CelerSport Ankle Athletic Running Socks ... | $15.95  | amazon    |     4.7  | https://tinyurl.com/2en2jbsd |
-| 07/10/2022 16:48:15 EDT -0400 | Signature Gold by GOLDTOE Men&#39;s Mode... | $9.35   | target    |     4.67 | https://tinyurl.com/2m5ec5nt |
+# Modified Workflow and Scalability:
 
-Trying to send email notification to the customers if there are any...
+We are now fetching the results from a single source with more than 1000 stores and better caching and result maaching and not just 3 stores as in the original implementation (Amazon, Target, Walmart). The tests show the number of sellers selling that particular searched item and if all the departments are considered, there are over more than 1000 sellers from our source (Google).
+We are fetching the results in a significantly shorter period of time. 
 
-Done :)
-```
-
-# Modified Workflow:
-
-We are now fetching the results from multiple stores and not just 3 stores as in the original implementation (Amazon, Target, Walmart).
-We are fetching the results in a shorter period of time. 
-
-Earlier time for fetching results: 21 seconds, 45ms
-New time for fetching results: 6 seconds, 55ms
+Earlier time for fetching results: 22 seconds, 45ms
+New time for fetching results: 2 seconds, 02ms which is visible on running the tests and could be even faster if images are not collected. This has led to 12x faster execution with 3x more simpler implementation.
 
 We have also implemented a UI from where all the products are easily viewable and accessible. 
 We can also redirect to the stores from where they can buy the products. 
