@@ -5,8 +5,8 @@
 
 import sys
 sys.path.append('../')
-from flask import Flask, render_template, request
-from google_scrapper import searchGoogle
+from flask import Flask, render_template, request  # noqa: E402
+from google_scrapper import searchGoogle  # noqa: E402
 
 app = Flask(__name__)
 
@@ -27,7 +27,8 @@ def get_products():
         sortval = False
     products1 = searchGoogle(val, sortval, number)
 
-    return render_template('index.html', res1=products1['inline_shopping_results'])
+    return render_template('index.html',
+                           res1=products1['inline_shopping_results'])
 
 
 if __name__ == "__main__":

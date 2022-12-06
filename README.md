@@ -2,21 +2,26 @@
 
 **Shopping Made Easy**
 
-![GitHub](https://img.shields.io/github/license/vishnuchalla/slash)
-![github workflow](https://github.com/secheaper/cheaper/actions/workflows/python-app.yml/badge.svg) 
+[![GitHub](https://img.shields.io/github/license/aadiltajani/slash)](https://github.com/aadiltajani/slash/blob/main/LICENSE)
+[![github workflow](https://github.com/secheaper/cheaper/actions/workflows/python-app.yml/badge.svg)](https://github.com/aadiltajani/slash/actions)
 [![DOI](https://zenodo.org/badge/561915312.svg)](https://zenodo.org/badge/latestdoi/561915312)
 ![Github](https://img.shields.io/badge/language-python-red.svg)
-![GitHub issues](https://img.shields.io/github/issues-raw/vishnuchalla/slash)
-![Github closes issues](https://img.shields.io/github/issues-closed-raw/vishnuchalla/slash)
-![Github pull requests](https://img.shields.io/github/issues-pr/vishnuchalla/slash)
-![Github closed pull requests](https://img.shields.io/github/issues-pr-closed/vishnuchalla/slash)
-[![codecov](https://codecov.io/gh/vishnuchalla/slash/branch/main/graph/badge.svg?token=VO0F809CJT)](https://codecov.io/gh/vishnuchalla/slash)
+[![GitHub issues](https://img.shields.io/github/issues-raw/aadiltajani/slash)](https://github.com/aadiltajani/slash/issues?q=is%3Aopen+is%3Aissue)
+[![Github closes issues](https://img.shields.io/github/issues-closed-raw/aadiltajani/slash)](https://github.com/aadiltajani/slash/issues?q=is%3Aissue+is%3Aclosed)
+[![Github pull requests](https://img.shields.io/github/issues-pr/aadiltajani/slash)](https://github.com/aadiltajani/slash/pulls)
+[![codecov](https://codecov.io/github/aadiltajani/slash/branch/main/graph/badge.svg?token=QPPBLKWU80)](https://codecov.io/github/aadiltajani/slash)
+![](https://img.shields.io/badge/OS-Linux-Python_informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=0000FF)
+[![](https://img.shields.io/badge/Code-Python-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=FF0000)](https://www.python.org/download/releases/3.0/)
+[![](https://img.shields.io/badge/IDE-IntelliJ_IDEA-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=FFA500)](https://www.jetbrains.com/idea/)
+[![](https://img.shields.io/badge/Shell-Bash-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=ffffff)](https://www.gnu.org/software/bash/)
 
 Slash is a command line tool that scrapes the most popular e-commerce websites to get the best deals on the searched items across these websites. 
 - **Fast**: With slash, you can save over 50% of your time by comparing deals across websites within seconds
 - **Easy**: Slash uses very easy commands to filter, sort and search your items
 - **Powerful**: Quickly alter the commands to get desired results
 - **Informative**: Provides the information about items through an email with attached csv file
+
+Document Generated: https://aadiltajani.github.io/slash/
 
 <ul align="left">
   <li> <a href="#rocket-installation">Installation</a> </li>
@@ -35,9 +40,19 @@ Slash is a command line tool that scrapes the most popular e-commerce websites t
   
 </ul>
 
+# Original Implementation:
+
 ---
 
 <p align="center"><img width="700" src="./assets/DemoGif.gif"></p>
+
+---
+
+# Our Modification:
+
+---
+
+<p align="center"><img width="700" src="./assets/demo.mp4"></p>
 
 ---
 
