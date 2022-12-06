@@ -10,6 +10,10 @@
 [![Github closes issues](https://img.shields.io/github/issues-closed-raw/aadiltajani/slash)](https://github.com/aadiltajani/slash/issues?q=is%3Aissue+is%3Aclosed)
 [![Github pull requests](https://img.shields.io/github/issues-pr/aadiltajani/slash)](https://github.com/aadiltajani/slash/pulls)
 [![codecov](https://codecov.io/github/aadiltajani/slash/branch/main/graph/badge.svg?token=QPPBLKWU80)](https://codecov.io/github/aadiltajani/slash)
+![](https://img.shields.io/badge/OS-Linux-Python_informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=0000FF)
+[![](https://img.shields.io/badge/Code-Python-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=FF0000)](https://www.python.org/download/releases/3.0/)
+[![](https://img.shields.io/badge/IDE-IntelliJ_IDEA-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=FFA500)](https://www.jetbrains.com/idea/)
+[![](https://img.shields.io/badge/Shell-Bash-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=ffffff)](https://www.gnu.org/software/bash/)
 
 Slash is a command line tool that scrapes the most popular e-commerce websites to get the best deals on the searched items across these websites. 
 - **Fast**: With slash, you can save over 50% of your time by comparing deals across websites within seconds
