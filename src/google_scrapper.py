@@ -4,10 +4,10 @@
 # __copyright__      = "Open source libraries"
 import requests, json
 from bs4 import BeautifulSoup
-
+import time
 
 def searchGoogle(query, sortval, number):
-
+    st = time.time()
     if number == '':
         number = 0
     else:
@@ -102,6 +102,7 @@ def searchGoogle(query, sortval, number):
     if 0 < number < len(results):
         results = results[:number]
     shopping_data_dict.update({"inline_shopping_results": results})
+    print('Time Taken:', time.time() - st)
     for i in shopping_data_dict['inline_shopping_results']:
         print(i)
 
