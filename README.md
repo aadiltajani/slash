@@ -21,14 +21,19 @@ Slash is a Web interface that scrapes the most popular e-commerce websites to ge
 - **Powerful**: Quickly alter the commands to get desired results
 - **Informative**: Provides the information about items through an email with attached csv file
 
-Document Generated: https://aadiltajani.github.io/slash/
+:open_file_folder: Document Generated
+---
+To have a better understanding of the code, please click on the [link](https://aadiltajani.github.io/slash/) provided below.
+
+[Github Pages Document](https://aadiltajani.github.io/slash/)
+
 
 <ul align="left">
   <li> <a href="#rocket-installation">Installation</a> </li>
-  
-  <li> <a href="#golf-flags-and-command-line-arguments">Flags & Args</a> </li>
-  
+ 
   <li><a href="#card_index_dividers-some-examples">Examples</a></li>
+  
+  <li> <a href="#modified-workflow-and-scalability">Modified Workflow and Scalability</a> </li>
   
   <li><a href="#thought_balloon-use-case">Use Case</a></li>
   
@@ -103,11 +108,7 @@ A few snapshots of our UI:
 - Slash in its current form is for people who have some understanding of python and are comfortable in using the command line interface to interact with systems.
 - Future updates aim to encompass a wide variety of users irrespective of their computer knowledge and background.
 
-:open_file_folder: Document Generated
----
-To have a better understanding of the code, please click on the [link](https://sumanthbsundar.github.io/slash_doc/) provided below.
 
-[Github Pages](https://sumanthbsundar.github.io/slash_doc/)
 
 
 :sparkles: Contributors
