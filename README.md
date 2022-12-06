@@ -83,6 +83,8 @@ We are fetching the results in a significantly shorter period of time.
 Earlier time for fetching results: 22 seconds, 45ms
 New time for fetching results: 2 seconds, 02ms which is visible on running the tests and could be even faster if images are not collected. This has led to 12x faster execution with 3x more simpler implementation.
 
+<p align="center"><img width="950" src="./assets/Results.jpg"></p>
+
 We have also implemented a UI from where all the products are easily viewable and accessible. 
 We can also redirect to the stores from where they can buy the products. 
 
