@@ -79,7 +79,7 @@ python slash.py --search icecream
 ```
 :golf: Flags and Command Line Arguments
 ---
-Currently the tool supports the following flags and command line arguments. These flags and arguments can be used to quickly filter and guide the search to get you the best results very quickly.
+Currently, the tool supports the following flags and command line arguments. These flags and arguments can be used to quickly filter and guide the search to get you the best results very quickly.
 
 | Arguments | Type | Default | Description                                                          |
 |-----------|------|---------|----------------------------------------------------------------------|
@@ -91,6 +91,7 @@ Currently the tool supports the following flags and command line arguments. Thes
 
 :card_index_dividers: Some Examples
 ---
+# Original Workflow:
 
 #### 1. Searching
 ```--search```  accepts one argument string which it uses to search and scrape the requested products on 
@@ -255,6 +256,21 @@ Trying to send email notification to the customers if there are any...
 
 Done :)
 ```
+
+# Modified Workflow:
+
+We are now fetching the results from multiple stores and not just 3 stores as in the original implementation (Amazon, Target, Walmart).
+We are fetching the results in a shorter period of time. 
+
+Earlier time for fetching results: 21 seconds, 45ms
+New time for fetching results: 6 seconds, 55ms
+
+We have also implemented a UI from where all the products are easily viewable and accessible. 
+We can also redirect to the stores from where they can buy the products. 
+
+A few snapshots of our UI:
+
+
 
 :thought_balloon: Use Case
 ---
