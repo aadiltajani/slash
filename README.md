@@ -52,7 +52,7 @@ Document Generated: https://aadiltajani.github.io/slash/
 
 ---
 
-<p align="center"><img width="700" src="./assets/demofinal.mp4"></p>
+<p align="center"><img width="700" src="./assets/Comparison.png"></p>
 
 ---
 
