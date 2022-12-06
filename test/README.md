@@ -1,6 +1,4 @@
 :open_file_folder: Test Documentation
 ---
 
-To have a better understanding of the code, please click on the [link](https://sumanthbsundar.github.io/slash_test/) provided below.
-
-[Github Pages](https://sumanthbsundar.github.io/slash_test/)
+This is a python test file for the project and tests different functionalities. This file is also being tested automatically on Github Actions [here](https://github.com/aadiltajani/slash/actions/runs/3624835705)
