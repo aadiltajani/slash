@@ -57,7 +57,7 @@ To have a better understanding of the code, please click on the [link](https://a
 
 ---
 
-<p align="center"><img width="700" src="./assets/Comparison.png"></p>
+<p align="center"><img width="700" src="./assets/demo1.mp4"></p>
 
 ---
 
