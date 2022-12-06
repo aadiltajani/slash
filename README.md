@@ -302,15 +302,20 @@ To have a better understanding of the code, please click on the [link](https://s
 
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/srujanponnur">Srujan Ponnur</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/sumanth-somasundar">Sumanth Somasundar</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/vishnuchalla/">Vishnu Challa</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/svnsairam/">Sairam Sakhamuri</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/kanchan-rawat-793753a2/">Kanchan Rawat</a></td>
+    <td align="center"><a href="https://github.com/aadiltajani">Aadil Tajani</a></td>
+    <td align="center"><a href="https://github.com/asingh0404">Aastha Singh</a></td>
+    <td align="center"><a href="https://github.com/ArpitCh21">Arpit Choudhary</a></td>
+    <td align="center"><a href="https://github.com/Dhruvish-Patel">Dhruvish Patel</a></td>
+    <td align="center"><a href="https://github.com/KaustubhKael">Kaustubh Deshpande</a></td>
   </tr>
 </table>
 
 :email: Support
 ---
 
-For any queries and help, please reach out to us at: vchalla2@ncsu.edu
+For any queries and help, please reach out to us at: 
+
+Dhruvish Patel: [Email](mailto:dhruvishpatel02@gmail.com)
+
+Aadil Tajani: [Email](mailto:tajani.aadil@gmail.com)
+
