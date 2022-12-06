@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 
+
 def searchGoogle(query, sortval, number=0):
     st = time.time()
     number = int(number)
